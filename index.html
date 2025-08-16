@@ -1,69 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
     <title>WALL-E: A Terra Que Criamos.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-    /* Reset básico */
-    body, h1, h2, p, iframe, img {
+    /* RESET BÁSICO */
+    * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
 
-    /* Corpo com fundo cinematográfico e textura sutil */
     body {
         font-family: 'Arial', sans-serif;
-        line-height: 1.7;
-        background: radial-gradient(circle at top, #000000 0%, #111111 100%);
+        background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
         color: #f0f0f0;
+        line-height: 1.7;
         padding: 20px;
         overflow-x: hidden;
     }
 
-    /* Cabeçalho principal estilo pôster de filme */
     h1 {
         font-family: 'Impact', sans-serif;
         color: #ffcc00;
         text-align: center;
-        margin-bottom: 25px;
         font-size: 3.5em;
         text-shadow: 0 0 15px #ffcc00, 0 0 30px #ff6600, 0 0 50px #ff3300;
+        margin-bottom: 30px;
         animation: fadeIn 2s ease-in-out;
     }
 
-    /* Subcabeçalhos estilo trailer / letreiro */
     h2 {
-        color: #ff4444;
-        margin-top: 25px;
-        margin-bottom: 15px;
         font-family: 'Verdana', sans-serif;
-        border-left: 6px solid #ff4444;
+        color: #ff4444;
+        margin-top: 30px;
+        margin-bottom: 15px;
         padding-left: 12px;
+        border-left: 6px solid #ff4444;
         background-color: rgba(0,0,0,0.65);
         border-radius: 5px;
         text-shadow: 1px 1px 7px #000;
         animation: fadeIn 2.5s ease-in-out;
     }
 
-    /* Parágrafos em caixas translúcidas com sombra de trailer */
     p {
-        margin-bottom: 20px;
-        font-size: 18px;
-        text-align: justify;
-        line-height: 1.8;
         background-color: rgba(0,0,0,0.55);
         padding: 18px;
         border-radius: 12px;
         box-shadow: 0px 4px 20px rgba(255,255,255,0.1);
+        margin-bottom: 20px;
+        font-size: 18px;
+        text-align: justify;
         animation: fadeIn 3s ease-in-out;
     }
 
-    /* Negrito com destaque tipo trailer */
     b {
         color: #ffcc00;
     }
 
-    /* Linha separadora dramática */
     hr {
         border: 0;
         height: 3px;
@@ -72,13 +67,11 @@
         border-radius: 2px;
     }
 
-    /* Pequena margem para <br> */
     br {
         margin-bottom: 15px;
         display: block;
     }
 
-    /* Vídeos estilo trailer com borda iluminada */
     iframe {
         display: block;
         margin: 25px auto;
@@ -89,11 +82,10 @@
     }
 
     iframe:hover {
-        transform: scale(1.04);
+        transform: scale(1.03);
         box-shadow: 0px 0px 45px #ffcc00;
     }
 
-    /* Imagens estilo pôster / trailer */
     img {
         display: block;
         margin: 25px auto;
@@ -104,11 +96,10 @@
     }
 
     img:hover {
-        transform: scale(1.06);
+        transform: scale(1.05);
         box-shadow: 0px 0px 50px #ffcc00;
     }
 
-    /* Links estilo destaque */
     a {
         color: #ffcc00;
         text-decoration: none;
@@ -118,7 +109,6 @@
         text-decoration: underline;
     }
 
-    /* Rodapé simples estilo profissional */
     footer {
         text-align: center;
         margin-top: 50px;
@@ -127,13 +117,20 @@
         color: #aaa;
     }
 
-    /* Animação fade-in estilo trailer */
     @keyframes fadeIn {
         from {opacity: 0; transform: translateY(25px);}
         to {opacity: 1; transform: translateY(0);}
     }
 
-    /* Responsividade profissional */
+    /* ACESSIBILIDADE */
+    body {
+        font-size: 18px;
+    }
+
+    h1, h2 {
+        line-height: 1.2;
+    }
+
     @media (max-width: 768px) {
         body {
             padding: 10px;
@@ -202,4 +199,3 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/lc6W-wKPNnc?si=WrVrBLP_Zl_E1o1R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </body>
 </html>
-
