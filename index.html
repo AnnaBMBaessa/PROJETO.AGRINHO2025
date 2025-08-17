@@ -9,6 +9,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #0b0c0f; /* fundo mais escuro pra destacar glow */
     color: #fff;
+    overflow-x: hidden;
 }
 
 /* Container da imagem */
@@ -151,7 +152,7 @@ footer {
 </div>
 
 <div id="conteudo">
-<!-- === SEU CONTEÚDO ORIGINAL COLADO AQUI === -->
+<!-- === SEU CONTEÚDO ORIGINAL AQUI === -->
 <h1>WALL-E: A Terra Que Criamos.</h1>
 <p><b>Não é cinema — o legado que deixamos é real.</b></p>
 <hr>
@@ -159,19 +160,21 @@ footer {
 <p>Não é filme, não é fantasia — é a vida real. A Terra, do ponto de vista científico, vai "morrer" daqui bilhões de anos quando o Sol envelhecer, evoluir e, se você acha que o Sol ou a ciência vão destruir o planeta, sinto te informar: não vão. O que não percebemos (ou percebemos e ignoramos) é que a Terra pode acabar bem antes do que imaginamos. E adivinha? A culpa é nossa. Quer entender melhor o que está acontecendo? Assista o breve vídeo abaixo.</p>
 <br>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WfGMYdalClU?si=xelzMCA2ZjPieyKc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<!-- ...restante do seu conteúdo permanece igual... -->
+<!-- ... resto do seu conteúdo permanece igual ... -->
 </div>
 
 <script>
 function mostrarConteudo() {
     const conteudo = document.getElementById('conteudo');
+    const container = document.getElementById('image-container');
     const img = document.getElementById('background');
 
-    // Faz a imagem desaparecer suavemente
+    // Aplica fade na imagem
     img.classList.add('fade-out');
 
-    // Depois de 1s (tempo da animação), mostra o conteúdo
+    // Depois de 1s (tempo da animação), remove capa + botão
     setTimeout(() => {
+        container.style.display = 'none';
         conteudo.style.display = 'block';
         conteudo.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 1000);
