@@ -10,6 +10,12 @@ body {
     overflow: hidden; /* impede scroll inicial */
 }
 
+/* Container da imagem */
+#image-container {
+    position: relative;
+    width: 100%;
+}
+
 /* Imagem que ocupa toda a largura e altura proporcional */
 #background {
     width: 100%;
@@ -64,13 +70,15 @@ button:hover {
 </head>
 <body>
 
-<!-- Imagem full width -->
-<img id="background" src="TrailerATerraQueCriamos.jpg" alt="WALL-E: A Terra Que Criamos">
+<div id="image-container">
+    <!-- Imagem full width -->
+    <img id="background" src="TrailerATerraQueCriamos.jpg" alt="WALL-E: A Terra Que Criamos">
 
-<!-- Botão sobre a imagem -->
-<button onclick="mostrarConteudo()">
-Assista o trailer
-</button>
+    <!-- Botão sobre a imagem -->
+    <button onclick="mostrarConteudo()">
+    Assista o trailer
+    </button>
+</div>
 
 <!-- Conteúdo do site -->
 <div id="conteudo">
@@ -80,14 +88,21 @@ Assista o trailer
 </div>
 
 <script>
+// Permite rolar só até o final da imagem
+const image = document.getElementById('background');
+document.body.addEventListener('wheel', function(e) {
+    const scrollTop = window.scrollY;
+    const maxScroll = image.height - window.innerHeight;
+    if(scrollTop >= maxScroll && !conteudoVisivel) {
+        e.preventDefault(); // bloqueia scroll além da imagem
+    }
+}, { passive: false });
+
+let conteudoVisivel = false;
 function mostrarConteudo() {
-    // Mostra o conteúdo
+    conteudoVisivel = true;
     document.getElementById('conteudo').style.display = 'block';
-    
-    // Permite scroll agora
-    document.body.style.overflow = 'auto';
-    
-    // Rola suavemente para o conteúdo
+    document.body.style.overflow = 'auto'; // libera scroll
     document.getElementById('conteudo').scrollIntoView({ behavior: 'smooth' });
 }
 </script>
