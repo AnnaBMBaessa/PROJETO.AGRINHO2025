@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>WALL-E: A Terra Que Criamos</title>
 <style>
 /* ===== BODY ===== */
 body {
@@ -14,12 +19,13 @@ body {
     width: 100%;
     height: 100vh; /* tela cheia */
     overflow: hidden;
+    background-color: #111; /* fallback caso a imagem não carregue */
 }
 
 #background {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* preenche sem distorcer */
     display: block;
 }
 
@@ -129,3 +135,31 @@ footer {
     }
 }
 </style>
+</head>
+<body>
+
+<div id="image-container">
+    <img id="background" src="TrailerATerraQueCriamos.jpg" alt="WALL-E: A Terra Que Criamos">
+    <button onclick="mostrarConteudo()">Assista o trailer</button>
+</div>
+
+<div id="conteudo">
+<!-- TODO o seu conteúdo HTML original -->
+<h1>WALL-E: A Terra Que Criamos.</h1>
+<p><b>Não é cinema — o legado que deixamos é real.</b></p>
+<hr>
+<h2>Você já se perguntou um dia: "Até onde o planeta Terra vai chegar?"</h2>
+<p>Não é filme, não é fantasia — é a vida real...</p>
+<!-- Continue com todo o conteúdo que você já tem -->
+</div>
+
+<script>
+function mostrarConteudo() {
+    const conteudo = document.getElementById('conteudo');
+    conteudo.style.display = 'block';
+    conteudo.scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
