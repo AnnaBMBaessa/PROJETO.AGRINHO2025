@@ -4,22 +4,16 @@
 <meta charset="UTF-8">
 <title>WALL-E: A Terra Que Criamos</title>
 <style>
-html, body {
+body {
     margin: 0;
-    padding: 0;
-    height: 100%;
     font-family: Arial, sans-serif;
+    overflow: hidden; /* impede scroll inicial */
 }
 
-/* Imagem que ocupa toda a tela e continua ao rolar */
-#background-container {
-    position: relative;
+/* Imagem que ocupa toda a largura e altura proporcional */
+#background {
     width: 100%;
-    min-height: 100vh; /* ocupa pelo menos a tela */
-    background-image: url('TrailerATerraQueCriamos.jpg');
-    background-repeat: no-repeat;
-    background-size: cover; /* cobre a tela toda */
-    background-position: top center;
+    display: block;
 }
 
 /* Botão sobre a imagem */
@@ -40,13 +34,14 @@ button:hover {
     background-color: #e6b800;
 }
 
-/* Conteúdo do principal.html */
+/* Conteúdo do site - escondido inicialmente */
 #conteudo {
     padding: 50px;
     max-width: 800px;
-    margin: 0 auto;
-    background-color: rgba(0,0,0,0.85); /* leve transparência */
+    margin: 50px auto;
+    background-color: #111;
     color: #fff;
+    display: none; /* escondido até clicar no botão */
 }
 
 #conteudo h1 {
@@ -69,17 +64,33 @@ button:hover {
 </head>
 <body>
 
-<div id="background-container">
-    <button onclick="document.getElementById('conteudo').scrollIntoView({ behavior: 'smooth' });">
-    Assista o trailer
-    </button>
-</div>
+<!-- Imagem full width -->
+<img id="background" src="TrailerATerraQueCriamos.jpg" alt="WALL-E: A Terra Que Criamos">
 
+<!-- Botão sobre a imagem -->
+<button onclick="mostrarConteudo()">
+Assista o trailer
+</button>
+
+<!-- Conteúdo do site -->
 <div id="conteudo">
     <h1>WALL-E: A Terra Que Criamos.</h1>
     <p>Não é cinema — o legado que deixamos é real.</p>
     <iframe src="https://www.youtube.com/embed/WfGMYdalClU" allowfullscreen></iframe>
 </div>
+
+<script>
+function mostrarConteudo() {
+    // Mostra o conteúdo
+    document.getElementById('conteudo').style.display = 'block';
+    
+    // Permite scroll agora
+    document.body.style.overflow = 'auto';
+    
+    // Rola suavemente para o conteúdo
+    document.getElementById('conteudo').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
 
 </body>
 </html>
