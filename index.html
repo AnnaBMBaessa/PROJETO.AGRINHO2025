@@ -7,150 +7,116 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #0b0c0f; /* fundo mais escuro pra destacar glow */
+    background: #000;
     color: #fff;
-    overflow-x: hidden;
 }
 
-/* Container da imagem */
+/* Container da imagem inicial */
 #image-container {
     position: relative;
-    width: 100%;
-    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
 }
 
-/* Imagem que ocupa toda a largura */
-#background {
-    width: 100%;
-    display: block;
-    transition: opacity 1s ease; /* suavização do fade */
+#image-container img {
+    max-width: 100%;
+    max-height: 100vh;
 }
 
-/* Classe para desaparecer */
-.fade-out {
-    opacity: 0;
-}
-
-/* Botão sobre a imagem */
-button {
+#btn-trailer {
     position: absolute;
-    top: 80px;
-    left: 20px;
-    padding: 15px 30px;
+    bottom: 50px;
+    padding: 12px 24px;
+    background: #1db954;
+    color: #fff;
     font-size: 18px;
-    background-color: #ffcc00;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    z-index: 2;
-    box-shadow: 0 0 20px #ffcc00;
-    animation: pulse 2s infinite;
+    transition: background 0.3s;
+}
+#btn-trailer:hover {
+    background: #1ed760;
 }
 
-button:hover {
-    background-color: #e6b800;
-    transform: scale(1.05);
-}
-
-/* Conteúdo do site - escondido inicialmente */
+/* Conteúdo escondido */
 #conteudo {
     display: none;
-    padding: 50px;
-    max-width: 800px;
-    margin: 50px auto;
-    background-color: #111;
-    color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 0 40px rgba(0, 255, 0, 0.3);
-    opacity: 0;
-    animation: fadeIn 1s forwards;
+    padding: 40px;
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.6;
 }
 
-/* Títulos com efeito glow */
-#conteudo h1 {
-    color: #a8ff60;
-    text-align: center;
-    text-shadow: 0 0 5px #a8ff60, 0 0 10px #a8ff60, 0 0 20px #00ff00;
-}
-
-#conteudo h2 {
-    color: #7fff7f;
-    text-shadow: 0 0 3px #7fff7f, 0 0 8px #00ff00;
-    margin-top: 40px;
-}
-
-#conteudo p {
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-#conteudo iframe {
-    width: 100%;
-    height: 400px;
-    border: none;
-    border-radius: 10px;
-    margin-bottom: 30px;
-}
-
-#conteudo img {
-    max-width: 100%;
-    margin: 20px 0;
-    border-radius: 10px;
-}
-
-/* Links */
-#conteudo a {
-    color: #a8ff60;
-    text-decoration: none;
-}
-
-#conteudo a:hover {
-    text-decoration: underline;
-}
-
-/* Rodapé opcional */
-footer {
-    text-align: center;
+/* MENU LATERAL */
+#menu-lateral {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    width: 220px;
+    background: rgba(0, 0, 0, 0.85);
     padding: 20px;
-    color: #888;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,255,0,0.3);
     font-size: 14px;
+    z-index: 1000;
+    display: none; /* só aparece depois do clique */
 }
 
-/* ===== RESPONSIVO ===== */
-@media screen and (max-width: 768px) {
-    #conteudo {
-        padding: 30px;
-        margin: 30px auto;
-    }
-    button {
-        padding: 15px 30px;
-        font-size: 18px;
-    }
-    #conteudo iframe {
-        height: 250px;
-    }
+#menu-lateral h3 {
+    color: #a8ff60;
+    margin-bottom: 10px;
+    font-size: 16px;
+    text-align: center;
 }
 
-/* ===== ANIMAÇÕES ===== */
-@keyframes pulse {
-    0% { box-shadow: 0 0 10px #ffcc00; }
-    50% { box-shadow: 0 0 25px #ffcc00; }
-    100% { box-shadow: 0 0 10px #ffcc00; }
+#menu-lateral ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+#menu-lateral li {
+    margin-bottom: 8px;
+}
+
+#menu-lateral a {
+    color: #7fff7f;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+#menu-lateral a:hover {
+    color: #fff;
+    text-decoration: underline;
 }
 </style>
 </head>
 <body>
 
+<!-- CAPA INICIAL -->
 <div id="image-container">
-    <img id="background" src="ATerraQueCriamos.jpg" alt="WALL-E: A Terra Que Criamos">
-    <button onclick="mostrarConteudo()">Assista o trailer</button>
+    <img src="sua-imagem.jpg" alt="Capa WALL-E: A Terra Que Criamos">
+    <button id="btn-trailer">Assista o Trailer</button>
 </div>
 
+<!-- MENU LATERAL -->
+<nav id="menu-lateral">
+  <h3>Navegação</h3>
+  <ul>
+    <li><a href="#pergunta-terra">Até onde o planeta Terra vai chegar?</a></li>
+    <li><a href="#wall-e">O que tem a ver com WALL-E?</a></li>
+    <li><a href="#poluicao">Planeta dominado por poluição</a></li>
+    <li><a href="#vicio">Vício em telas</a></li>
+    <li><a href="#acao">Discursos vs Ação</a></li>
+    <li><a href="#ultima-chance">Última Chance</a></li>
+  </ul>
+</nav>
+
+<!-- CONTEÚDO PRINCIPAL -->
 <div id="conteudo">
 <!-- Colei TODO o seu HTML original aqui -->
 <h1>WALL-E: A Terra Que Criamos.</h1>
@@ -202,22 +168,13 @@ footer {
 
 </div>
 
+
 <script>
-function mostrarConteudo() {
-    const conteudo = document.getElementById('conteudo');
-    const container = document.getElementById('image-container');
-    const img = document.getElementById('background');
-
-    // Aplica fade na imagem
-    img.classList.add('fade-out');
-
-    // Depois de 1s (tempo da animação), remove capa + botão
-    setTimeout(() => {
-        container.style.display = 'none';
-        conteudo.style.display = 'block';
-        conteudo.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 1000);
-}
+document.getElementById("btn-trailer").addEventListener("click", function() {
+    document.getElementById("image-container").style.display = "none";
+    document.getElementById("conteudo").style.display = "block";
+    document.getElementById("menu-lateral").style.display = "block";
+});
 </script>
 
 </body>
