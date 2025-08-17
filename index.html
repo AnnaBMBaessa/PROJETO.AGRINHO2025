@@ -7,8 +7,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #0b0c0f; /* fundo escuro */
-    color: #e0e0e0; /* cor do texto */
+    background-color: #0b0c0f; /* fundo mais escuro pra destacar glow */
+    color: #fff;
 }
 
 /* Container da imagem */
@@ -30,21 +30,18 @@ button {
     left: 20px;
     padding: 15px 30px;
     font-size: 18px;
-    font-weight: bold;
-    background-color: #00ff7f; /* verde neon */
-    color: #0b0c0f;
+    background-color: #ffcc00;
     border: none;
-    border-radius: 12px;
+    border-radius: 8px;
     cursor: pointer;
     z-index: 2;
-    box-shadow: 0 0 15px #00ff7f;
-    transition: 0.3s ease;
+    box-shadow: 0 0 20px #ffcc00;
+    animation: pulse 2s infinite;
 }
 
 button:hover {
-    background-color: #00e673;
+    background-color: #e6b800;
     transform: scale(1.05);
-    box-shadow: 0 0 25px #00ff7f, 0 0 50px #00ff7f;
 }
 
 /* Conteúdo do site - escondido inicialmente */
@@ -54,25 +51,31 @@ button:hover {
     max-width: 800px;
     margin: 50px auto;
     background-color: #111;
-    color: #e0e0e0;
+    color: #fff;
     border-radius: 12px;
-    box-shadow: 0 0 30px rgba(0, 255, 127, 0.3);
+    box-shadow: 0 0 40px rgba(0, 255, 0, 0.3);
+    opacity: 0;
+    animation: fadeIn 1s forwards;
 }
 
-/* Títulos */
-#conteudo h1, #conteudo h2 {
-    color: #00ff7f;
-    margin-bottom: 20px;
+/* Títulos com efeito glow */
+#conteudo h1 {
+    color: #a8ff60;
+    text-align: center;
+    text-shadow: 0 0 5px #a8ff60, 0 0 10px #a8ff60, 0 0 20px #00ff00;
 }
 
-/* Parágrafos */
+#conteudo h2 {
+    color: #7fff7f;
+    text-shadow: 0 0 3px #7fff7f, 0 0 8px #00ff00;
+    margin-top: 40px;
+}
+
 #conteudo p {
     font-size: 18px;
-    line-height: 1.7;
     margin-bottom: 30px;
 }
 
-/* Iframes (vídeos) */
 #conteudo iframe {
     width: 100%;
     height: 400px;
@@ -81,19 +84,15 @@ button:hover {
     margin-bottom: 30px;
 }
 
-/* Imagens dentro do conteúdo */
 #conteudo img {
     max-width: 100%;
     margin: 20px 0;
     border-radius: 10px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-/* Links se tiver algum */
+/* Links */
 #conteudo a {
-    color: #00ff7f;
+    color: #a8ff60;
     text-decoration: none;
 }
 
@@ -101,19 +100,39 @@ button:hover {
     text-decoration: underline;
 }
 
-/* Responsivo */
+/* Rodapé opcional */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    font-size: 14px;
+}
+
+/* ===== RESPONSIVO ===== */
 @media screen and (max-width: 768px) {
     #conteudo {
         padding: 30px;
         margin: 30px auto;
     }
     button {
-        padding: 12px 25px;
-        font-size: 16px;
+        padding: 15px 30px;
+        font-size: 18px;
     }
     #conteudo iframe {
         height: 250px;
     }
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px #ffcc00; }
+    50% { box-shadow: 0 0 25px #ffcc00; }
+    100% { box-shadow: 0 0 10px #ffcc00; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 </style>
 </head>
@@ -125,7 +144,7 @@ button:hover {
 </div>
 
 <div id="conteudo">
-<!-- TODO o seu HTML original permanece intacto -->
+<!-- Colei TODO o seu HTML original aqui -->
 <h1>WALL-E: A Terra Que Criamos.</h1>
 <p><b>Não é cinema — o legado que deixamos é real.</b></p>
 <hr>
@@ -133,7 +152,46 @@ button:hover {
 <p>Não é filme, não é fantasia — é a vida real. A Terra, do ponto de vista científico, vai "morrer" daqui bilhões de anos quando o Sol envelhecer, evoluir e, se você acha que o Sol ou a ciência vão destruir o planeta, sinto te informar: não vão. O que não percebemos (ou percebemos e ignoramos) é que a Terra pode acabar bem antes do que imaginamos. E adivinha? A culpa é nossa. Quer entender melhor o que está acontecendo? Assista o breve vídeo abaixo.</p>
 <br>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WfGMYdalClU?si=xelzMCA2ZjPieyKc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<!-- TODO o restante do seu conteúdo original -->
+<br>
+<br>
+<p>Hoje em dia, com todos os avanços tecnológicos, é fácil pensar que a tecnologia traz somente benefícios, mas não é bem assim. Indústrias poluindo sem dó, lixo eletrônico jogado fora como se não valesse nada, consumo exagerado e desperdício de recursos naturais… tudo isso está acelerando a destruição do planeta, e o mais irônico: as ordens são nossas. Muitas vezes, a tecnologia é usada de forma irresponsável, sem pensar nas consequências futuras, levando a uma situação cada vez mais grave, e o resultado? Um meio ambiente cada vez mais em crise.</p>
+<img src="https://img.freepik.com/vetores-premium/industria-fabril-poluindo-a-cena-da-agua_18591-64080.jpg" alt="fabrica">
+<br>
+<hr>
+<h2>Mas o que tudo isso tem a ver com o filme WALL-E?</h2>
+<p>O filme "WALL-E" do streaming Disney+, conta a história de um robô chamado WALL-E, que foi criado para limpar a Terra, que virou um lixão gigante devido ao excesso de consumo humano. Eva, um robô enviado do espaço para verificar se a Terra está habitável novamente, ajuda WALL-E a embarcar em uma aventura que revela o quanto a humanidade se afastou de seus valores e do cuidado com o planeta. No final, a esperança de recuperar a Terra ainda depende da mudança de comportamento das pessoas, que precisam valorizar a natureza e assumir a responsabilidade pelo que fizeram. É uma história que mistura ficção, com uma possível realidade. 
+<br>
+<h2>O planeta Terra pode ser dominado por poluição assim como no filme WALL-E?</h2>
+<p>Assim como no filme, onde a Terra ficou coberta de lixo por causa do consumismo desenfreado e da negligência da humanidade, a nossa realidade também corre esse risco se não mudarmos nossos hábitos. No filme, os humanos se tornaram totalmente dependentes da tecnologia e do consumo, deixando o planeta praticamente inabitável. Essa história serve como um alerta de que, se continuarmos nesse ritmo, podemos acabar deixando o planeta tão destruído que precisaremos de uma grande limpeza e mudança de comportamento para que a vida possa voltar a florescer. Portanto, o filme é uma espécie de espelho futurista do que pode acontecer se não cuidarmos do nosso planeta hoje, imagino que você saiba do que estou falando. A tecnologia pode ser muito atrativa e a maior fonte de distração que temos na atualidade, as pessoas estão se perdendo e esquecendo de viver. Algumas delas consomem como se o mundo fosse infinito, jogam diversas formas de lixo nas ruas, rios, oceanos... sem pensar nas consequências que essas atitudes trazem ao meio ambiente. Todos os dias gastamos horas rolando o feed, comprando produtos que não precisamos, acumulando coisas que nem serão usadas… e ninguém se atenta de que cada escolha dessas, deixa uma marca no planeta. Enquanto estamos distraídos, a Terra vai ficando cada vez mais sufocada pelo nosso descuido e, pasmem: não tem replay ou botão de reset na vida real.</p>
+<br>
+<p><b>O vídeo abaixo é mais um alerta sobre o futuro que estamos construindo com o uso desenfreado da tecnologia. Repare como, sempre que nos viciamos em consumir cada vez mais — seja em TVs, celulares, tablets ou realidade virtual — a destruição da natureza aparece junto, silenciosa, mas implacável.</b></p>
+<br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Qx8JIoNOz0Y?si=yE59mfe0p-YOewqy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<br>
+<h2>"Eu não me considero viciado em telas." Tem certeza?</h2>
+<p>O vício em telas vai muito além de passar horas grudados em redes sociais — ele está deixando um rastro de destruição tanto na nossa mente quanto no planeta. Psicólogos alertam que a exposição constante às telas altera nosso comportamento, aumenta níveis de ansiedade, reduz a capacidade de concentração e prejudica a percepção da realidade. Ao mesmo tempo, a fabricação e descarte desses dispositivos cobram um preço ambiental altíssimo: mineração intensa, emissão de poluentes, contaminação de solos e cursos d’água e impacto irreversível na vida selvagem. Cada nova tela que compramos ou jogamos fora contribui para esse ciclo de degradação, e nós mal percebemos o tamanho do problema. Estamos tão absorvidos por notificações, vídeos e jogos que esquecemos que cada ação tem consequências tangíveis: rios poluídos, florestas destruídas, espécies ameaçadas. É como se estivéssemos criando um mundo paralelo na tela enquanto o mundo real sofre — e, segundo os especialistas, quanto mais cedo percebemos isso, melhor podemos agir antes que o estrago se torne irreversível. Muitos nunca pensaram por esse lado, e muitos nem se atentam aos detalhes porque estão tão conectados que simplesmente ignoram o que acontece no lugar mais importante: o planeta Terra. E depois de tudo isso… você ainda não se considera viciado?</p>
+<p><b>Observe o curto documentário do psicólogo Cristiano Nabuco a respeito dos vícios nas telas.</b></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0iwquDzZRN0?si=u87Q2dgzXz7UmWTs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<hr>
+<h2>Você usa a tecnologia ao seu favor ou é escravo dela?</h2>
+<p>Pense bem: você consegue passar um dia inteiro sem olhar o celular a cada 5 minutos? Consegue se concentrar em uma conversa sem se distrair com notificações? Ou já virou refém de telas, curtidas e mensagens instantâneas? Se a resposta te incomoda, é sinal de que a tecnologia já está no controle de sua vida, e não você. </p>
+<p>Mas fique tranquilo: não é a tecnologia que te escraviza — é a forma como você usa ela. É assim que você vai assumir o controle: definir limites de tempo, desligar notificações inúteis, reservar momentos livres de telas, usar a internet para aprender e crescer, e não apenas para se distrair. A diferença entre ser controlado pela tecnologia e controlar ela, está nas suas escolhas.</p>
+<h2>O que eu posso fazer para não me tornar um escravo da tecnologia?</h2>
+<p>Se queremos um futuro que não pareça ter saído de WALL-E, precisamos usar a tecnologia com inteligência — não só para consumir, mas para preservar e restaurar o planeta. Ela pode ser nossa aliada: gerar energias renováveis, melhorar a reciclagem, criar produtos duráveis, monitorar poluição e espalhar informação sobre sustentabilidade. Mas entendam: tecnologia sozinha não faz milagre. Sem consciência, ética e compromisso real, continuaremos destruindo o que resta de verde, de água limpa e de vida selvagem. Cada ação conta, e cada escolha importa. Se usarmos a tecnologia do jeito certo, podemos mudar hábitos, proteger recursos e garantir que as próximas gerações herdem uma Terra viva, respirável e saudável. No fim, o verdadeiro poder da tecnologia está na nossa capacidade de decidir se vamos construir um mundo de esperança ou um planeta de lixo.</p>
+<p>Você deve pensar agora que a tecnologia só serve para nos distrair ou nos deixar dependentes de telas, mas pense de novo. A mesma inteligência humana que cria redes sociais e videogames também pode criar soluções para salvar a Terra, se tivermos capacidade para isso.Olhe ao redor: painéis solares que geram energia limpa, turbinas eólicas que transformam vento em eletricidade, drones que monitoram desmatamento e rios poluídos, aplicativos que ajudam a reduzir o desperdício e até robôs que limpem o lixo nos oceanos. Tudo isso existe agora, e tudo isso depende de nós para funcionar de verdade.</p>
+<hr>
+<h2>O planeta não precisa de discursos, precisa de ação.</h2>
+<p>Vamos ser honestos: você separa seu lixo? Evita desperdício de água? Pensa duas vezes antes de comprar algo que não precisa? Ou espera que “alguém lá em cima” resolva o problema enquanto continua vivendo como se os recursos fossem infinitos? O planeta não vai esperar. Florestas estão sendo derrubadas agora, oceanos estão sendo sufocados por plástico agora, espécies estão desaparecendo agora. E sabe o que é pior? Tudo isso tem solução, mas depende de escolhas que você pode começar a fazer hoje. Reduzir, reutilizar, reciclar, cobrar mudanças e mudar seus hábitos é muito mais poderoso do que fingir que nada esteja acontecendo.</p>
+<p>Não adianta aplaudir o WALL-E no cinema e continuar jogando lixo na rua. O futuro será verde ou não será? Isso só depende de nós.</p>
+<p>Entretanto, entenda: a tecnologia sem consciência é apenas mais um problema. Se continuarmos ignorando as consequências do nosso consumo, todos esses avanços serão inúteis. O ponto não é só criar soluções, é usar a inteligência humana para agir, não para procrastinar, comprar mais coisas que não precisamos ou ignorar o desastre acontecendo ao nosso redor.</p>
+<p>Você ainda acha que não pode fazer nada? Cada escolha conta: separar o lixo, economizar energia, apoiar projetos sustentáveis, consumir com responsabilidade. O futuro da Terra não está nas mãos de empresas ou governos sozinhos — está nas nossas mãos, com a tecnologia como aliada ou como inimiga.</p>
+<br>
+<h2>A Última Chance de Reconstruir o Planeta</h2>
+<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQazfsVHbYjnd9MmkbrYbJOXEkGPuDL7rehK1ghXS0dEL1_kD2o2qKGhfGctDY-006sxDHjWhTAdP0gikML9tUkbidELFi8VGZb_z8heA" alt="Descrição da imagem" width="600">
+<img src="https://static.todamateria.com.br/upload/pl/an/planetaterra-cke.jpg" alt="Planeta Terra" width="600">
+<p>Olhe para a Terra como ela era na sua primeira foto, inteira, coberta por calotas brancas e nuvens densas que funcionavam como escudos naturais, protegendo oceanos, rios, florestas e a própria vida; agora veja as imagens mais recentes, com gelo derretido, nuvens dispersas e sinais claros de desgaste, e perceba que cada mudança visível não é obra do tempo, mas consequência direta do descuido humano, do consumo desenfreado, da poluição constante e da negligência com os ecossistemas; continuamos vivendo como se os recursos fossem infinitos, como se o planeta pudesse aguentar tudo, enquanto a tecnologia, que poderia ser nossa maior aliada, é muitas vezes usada apenas para distração, lazer e conveniência pessoal, e não para reconstruir, monitorar ou restaurar o que já foi destruído; poderíamos ter sistemas que limpam rios e mares, filtram o ar, transformam resíduos em novos recursos, cidades inteligentes que economizam energia, energias limpas substituindo combustíveis fósseis, sensores e satélites que detectam desmatamento e mudanças climáticas em tempo real, softwares que otimizam indústrias e agricultura sustentável que preserva solos e reduz pesticidas, mas seguimos adiando escolhas, ignorando sinais e vivendo como se nada estivesse acontecendo, achando que haverá um replay ou botão de reset, quando na realidade cada ação negligente deixa marcas permanentes; a pergunta que fica é direta e brutal: vamos continuar permitindo que a Terra se desgaste diante dos nossos olhos, que calotas desapareçam, rios sequem, florestas desapareçam e espécies se extinguam, ou vamos assumir nossa responsabilidade, usar a tecnologia com consciência, agir com urgência e finalmente reconstruir, recuperar e proteger, garantindo que o futuro seja de vida, saúde e esperança, e não de destruição irreversível que nenhum filme, nenhuma ficção e nenhuma desculpa serão capazes de consertar?</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lc6W-wKPNnc?si=WrVrBLP_Zl_E1o1R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 </div>
 
 <script>
